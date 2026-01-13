@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Hrida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            overflow-x: hidden;
+            background: #2a2a3e;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* PAGE 1: Birthday Card */
+        #page1 {
+            background: #fef7f0;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .card-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #f4d4ba;
+        }
+
+        .card-inner {
+            background: #fffbf7;
+            padding: 40px 30px;
+        }
+
+        .decoration {
+            text-align: center;
+            color: #d4a574;
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #8b5a3c;
+            margin: 20px 0;
+        }
+
+        .birthday-message {
+            text-align: center;
+            font-size: 15px;
+            color: #5c4033;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        /* PAGE 2: Confession */
+        #page2 {
+            background: #fef7f0;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .separator {
+            text-align: center;
+            color: #d4a574;
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        .confession-intro {
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            color: #8b5a3c;
+            margin: 20px 0;
+        }
+
+        .confession-text {
+            font-size: 15px;
+            color: #4a3428;
+            line-height: 1.9;
+            text-align: left;
+            margin: 30px 0;
+            white-space: pre-line;
+        }
+
+        .closing-text {
+            text-align: center;
+            font-size: 14px;
+            font-style: italic;
+            color: #6b4e3d;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        /* PAGE 3: Visual Special */
+        #page3 {
+            background: #1a1a2e;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        #visualCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #2a2a3e;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: #d4a574;
+        }
+
+        .btn-secondary {
+            background: #8b5a3c;
+        }
+
+        .btn-special {
+            background: #ff6b9d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 26px;
+            }
+            
+            .card-inner {
+                padding: 30px 20px;
+            }
+
+            .nav-btn {
+                font-size: 12px;
+                padding: 10px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1: Birthday Card -->
+    <div id="page1" class="page active">
+        <div class="card-container">
+            <div class="card-inner">
+                <div class="decoration">✦</div>
+                <h1 class="title">Happy Birthday, Hrida! 🎂</h1>
+                <p class="birthday-message">
+                    I hope your special day is filled with joy, warmth,<br>
+                    and all the happiness you deserve.<br><br>
+                    You deserve to be celebrated today and always.
+                </p>
+                <div class="decoration">✦</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: Confession -->
+    <div id="page2" class="page">
+        <div class="card-container">
+            <div class="card-inner">
+                <div class="decoration">✦</div>
+                <div class="separator">• • •</div>
+                <p class="confession-intro">There's something I need to share with you:</p>
+                <p class="confession-text">Hrida, I need to be honest and clear with you, because I know I'd regret it if I missed this opportunity to tell you how I feel about you.
+
+I've had a huge, huge, huge crush on you for months now, and I was waiting for the right chance to talk to you about this, even though I couldn't manage to.
+
+I just want you to know that I really love you for now, then and may be forever.
+
+I don't expect anything from you; I just felt it was important to be honest. I hope you understand.</p>
+                <p class="closing-text">
+                    Thank you for being who you are.<br>
+                    Whatever your response, I'm grateful for the chance to share this with you.
+                </p>
+                <div class="decoration">✦</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: Visual Special -->
+    <div id="page3" class="page">
+        <canvas id="visualCanvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container" id="navContainer">
+        <button class="nav-btn btn-secondary" id="prevBtn" style="display: none;">← Back</button>
+        <button class="nav-btn btn-primary" id="nextBtn">Continue →</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 3;
+
+        // Page navigation
+        function showPage(pageNum) {
+            currentPage = pageNum;
+            
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
+            // Show current page
+            const pages = ['page1', 'page2', 'page3'];
+            document.getElementById(pages[pageNum]).classList.add('active');
+            
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if (pageNum === 0) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'block';
+                nextBtn.textContent = 'Continue →';
+                nextBtn.className = 'nav-btn btn-primary';
+            } else if (pageNum === 1) {
+                prevBtn.style.display = 'block';
+                prevBtn.textContent = '← Back';
+                nextBtn.style.display = 'block';
+                nextBtn.textContent = 'See Something Special →';
+                nextBtn.className = 'nav-btn btn-special';
+            } else {
+                prevBtn.style.display = 'block';
+                prevBtn.textContent = '← Back to Message';
+                nextBtn.style.display = 'none';
+            }
+
+            // Start animation if on page 3
+            if (pageNum === 2) {
+                initVisuals();
+            }
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPage > 0) showPage(currentPage - 1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentPage < totalPages - 1) showPage(currentPage + 1);
+        });
+
+        // Visual Animation (Page 3)
+        let animationRunning = false;
+        const canvas = document.getElementById('visualCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let hearts = [];
+        let time = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function initVisuals() {
+            if (animationRunning) return;
+            animationRunning = true;
+            
+            resizeCanvas();
+            
+            // Create particles
+            particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3 + 2,
+                    speed: Math.random() * 0.8 + 0.3,
+                    color: ['#ff6b9d', '#c44569', '#ffa07a', '#ff69b4', '#ffd700'][Math.floor(Math.random() * 5)]
+                });
+            }
+
+            // Create hearts
+            hearts = [];
+            for (let i = 0; i < 15; i++) {
+                hearts.push({
+                    x: Math.random() * (canvas.width - 100) + 50,
+                    y: Math.random() * (canvas.height - 200) + 100,
+                    phase: Math.random() * Math.PI * 2,
+                    size: Math.random() * 15 + 15
+                });
+            }
+
+            animate();
+        }
+
+        function drawHeart(x, y, size, color) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(size / 20, size / 20);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            
+            for (let i = 0; i <= 360; i += 10) {
+                const angle = i * Math.PI / 180;
+                const hx = 16 * Math.pow(Math.sin(angle), 3);
+                const hy = -(13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 
+                           2 * Math.cos(3 * angle) - Math.cos(4 * angle));
+                if (i === 0) ctx.moveTo(hx, hy);
+                else ctx.lineTo(hx, hy);
+            }
+            
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function animate() {
+            if (currentPage !== 2) {
+                animationRunning = false;
+                return;
+            }
+
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Draw gradient circles
+            for (let i = 0; i < 5; i++) {
+                const radius = 150 + i * 40;
+                const alpha = (50 - i * 10).toString(16).padStart(2, '0');
+                ctx.strokeStyle = `#${alpha}2040`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Animate particles
+            particles.forEach(p => {
+                p.y -= p.speed;
+                if (p.y < -10) {
+                    p.y = canvas.height + 10;
+                    p.x = Math.random() * canvas.width;
+                }
+
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Animate hearts
+            time += 0.05;
+            hearts.forEach(h => {
+                const offsetX = 30 * Math.sin(time + h.phase);
+                const offsetY = 20 * Math.cos(time * 0.5 + h.phase);
+                drawHeart(h.x + offsetX, h.y + offsetY, h.size, '#ff1744');
+            });
+
+            // Center pulsating heart
+            const pulse = 1 + 0.2 * Math.sin(time * 2);
+            drawHeart(centerX, 200, 60 * pulse, '#ff6b9d');
+
+            // Main text with glow
+            ctx.font = 'bold 48px Georgia';
+            ctx.textAlign = 'center';
+            
+            // Glow effect
+            for (let i = 3; i > 0; i--) {
+                ctx.fillStyle = `#ff${(40 + i * 20).toString(16)}${(40 + i * 20).toString(16)}`;
+                ctx.fillText("You're Special", centerX, 200);
+            }
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText("You're Special", centerX, 200);
+
+            // Stars
+            ctx.font = '24px Georgia';
+            ctx.fillStyle = '#ffd700';
+            ctx.fillText('✦  ✦  ✦', centerX, 250);
+
+            // Message
+            ctx.font = 'italic 20px Georgia';
+            ctx.fillStyle = '#ffc0cb';
+            const lines = [
+                'In a world of ordinary moments,',
+                'you shine with extraordinary light.',
+                '',
+                'Your presence makes everything brighter,',
+                'and knowing you has been a gift I cherish deeply.'
+            ];
+            lines.forEach((line, i) => {
+                ctx.fillText(line, centerX, 320 + i * 30);
+            });
+
+            // Bottom decorative elements
+            for (let i = 0; i < 10; i++) {
+                const xPos = 100 + i * (canvas.width - 200) / 9;
+                const yPos = canvas.height - 150 + 15 * Math.sin(time + i * 0.5);
+                ctx.fillStyle = '#ff69b4';
+                ctx.beginPath();
+                ctx.arc(xPos, yPos, 8, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Sparkles
+            ctx.font = '20px Arial';
+            for (let i = 0; i < 8; i++) {
+                const sx = Math.random() * canvas.width;
+                const sy = Math.random() * canvas.height;
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText('✨', sx, sy);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+</body>
+</html>
+
